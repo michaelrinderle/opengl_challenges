@@ -6,7 +6,7 @@ opengl generic sort analyzer
 
 ![Screenshot](challenge1.gif)
 
-# challenge 1 (custom analyzer)
+# challenge 2 (custom analyzer)
 opengl forward & back sort analyzer
 (utilizes key stroke callback functionality)
 
