@@ -28,6 +28,7 @@
 app_state app::state{
     false,
     false,
+    false
 };
 
 app::app()
@@ -153,9 +154,18 @@ app::initialize_array()
 void
 app::sort_array()
 {
+
     for (int i = 0; i < length; i++) {
-        if (arr[i] > arr[i + 1]) {
-            std::swap(arr[i], arr[i + 1]);
+
+        if (!app::state.isReverse) {
+            if (arr[i] > arr[i + 1]) {
+                std::swap(arr[i], arr[i + 1]);
+            }
+        }
+        else {
+            if (arr[i] < arr[i + 1]) {
+                std::swap(arr[i + 1], arr[i]);
+            }
         }
     }
 }
@@ -172,10 +182,15 @@ app::key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 {
     if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
         glfwSetWindowShouldClose(window, GLFW_TRUE);
-    else if (key == 32) {
+    else if (key == GLFW_KEY_B) {
         app::state.isSorting = true;
+        app::state.isReverse = false;
     }
-    else if (key == 82) {
+    else if (key == GLFW_KEY_F) {
+        app::state.isSorting = true;
+        app::state.isReverse = true;
+    }
+    else if (key == GLFW_KEY_R) {
         app::state.isRestarting = true;
     }
 }

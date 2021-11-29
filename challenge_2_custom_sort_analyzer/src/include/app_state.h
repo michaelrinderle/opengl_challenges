@@ -30,6 +30,7 @@
 
 struct app_state {
     bool isSorting;
+    bool isReverse;
     bool isRestarting;
 };
 

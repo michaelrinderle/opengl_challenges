@@ -44,7 +44,7 @@ private:
     int screen_width = 600;
     int screen_height = 600;
 
-    int length = 5000;
+    int length = 1000;
     int* arr;
 
     void render();
